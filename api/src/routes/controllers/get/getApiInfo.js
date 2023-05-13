@@ -27,4 +27,3 @@ module.exports = getApiInfo;
 
 
 
-//const url =`https://api.spoonacular.com/recipes/complexSearch?apiKey=8cbdbbb665bc48bcb85204318ac55e6c&number=100&addRecipeInformation=true`;
