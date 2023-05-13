@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_APYKEY
+  DB_USER, DB_PASSWORD, DB_HOST, API_KEY
 } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/food`, {
@@ -34,8 +34,8 @@ const { Recipe, Diets } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-Diets.belongsToMany(Recipe, {through: "recipe_diets"});
-Recipe.belongsToMany(Diets, {through: "recipe_diets"});
+Diets.belongsToMany(Recipe, {through: "recipes_diet"});
+Recipe.belongsToMany(Diets, {through: "recipes_diet"});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
