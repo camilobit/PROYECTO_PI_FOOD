@@ -1,0 +1,95 @@
+/* Details.css */
+
+/* Contenedor principal */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de la receta */
+.details-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Información de la receta */
+.details-info {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* ID de la receta */
+.details-id {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Nombre de la receta */
+.details-name {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* HealthScore */
+.details-healthscore {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Tipo de dieta */
+.details-type-diet {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Lista de tipos de dieta */
+.details-diet-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Elemento de la lista de tipos de dieta */
+.details-diet-item {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Resumen de la receta */
+.details-summary {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Pasos de la receta */
+.details-steps {
+  text-align: left;
+}
+
+/* Lista de pasos */
+.details-steps-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+/* Elemento de la lista de pasos */
+.details-step-item {
+  margin-bottom: 10px;
+  font-size: 16px;
+}

@@ -2,7 +2,7 @@ const axios = require('axios');
 require('dotenv').config();
 // const formateRecipe = require("../../helpers/formateRecipes");
 const { API_KEY } = process.env;
-const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=5&addRecipeInformation=true`;
+const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=10&addRecipeInformation=true`;
 
 const getApiInfo = async () => {
         const apiUrl = await axios.get(url)
@@ -10,15 +10,16 @@ const getApiInfo = async () => {
             return {
                 id:data.id,
                 name:data.title,
+                diets: data.diets,
                 imagen:data.image,
                 summary:data.summary,
                 healthScore: data.healthScore,
                 process: data.analyzedInstructions,
-                diets: data.diets,
                 vegetarian: data.vegetarian,
                 vegan: data.vegan,
                 glutenFree: data.glutenFree
             } 
+            
         });
         return apiInfo
 };

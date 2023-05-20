@@ -1,0 +1,58 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Lucida Sans', cursive;
+  font-size: 2rem;
+  color: #1a1919;
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+
+.title button {
+  background-color: #ff5722;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.NavLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.NavLink button {
+  background-color: #ff5722;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.NavLink button:hover {
+  background-color: #e64a19;
+}
+
+/* Estilos para la página */
+body {
+  background-color: #d5c5b8;
+}
+
+.containerLanding {
+  display: flex;
+  justify-content: first baseline;
+  align-items: center;
+  height: 100%;
+}
+

@@ -1,9 +1,9 @@
-const { Recipe, Diets } = require("../../../db");
+const { Recipe, TypeDiet } = require("../../../db");
 
 const getDbInf = async () => {
     return await Recipe.findAll({
         include:{
-            model: Diets,
+            model: TypeDiet,
             attributes:['name'],
             through:{
                 attributes:[]

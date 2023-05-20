@@ -1,23 +1,24 @@
-const { Diets } = require('../../../db')
+const { TypeDiet } = require('../../../db')
 const getApiInfo = require('./getApiInfo');
+
 const controllerGetDiets = async () => {
     const apiInfo = await getApiInfo();
     const diets = apiInfo.reduce((acc, cur) => {
         return [...acc, ...cur.diets];
     }, []);
 
-    const uniqueDiets = [];
+    const onlyDiets = [];
     for (const diet of diets) {
-        if (!uniqueDiets.some(el => el.name === diet)) {
-        uniqueDiets.push({ name: diet });
+        if (!onlyDiets.some(el => el.name === diet)) {
+        onlyDiets.push({ name: diet });
     }
     }
 
-    for (const diet of uniqueDiets) {
-        await Diets.findOrCreate({ where: { name: diet.name } });
+    for (const diet of onlyDiets) {
+        await TypeDiet.findOrCreate({ where: { name: diet.name } });
     }
 
-    return uniqueDiets;
+    return onlyDiets;
 };
 
 
@@ -41,19 +42,19 @@ module.exports = controllerGetDiets;
     //       return [...acc, ...cur.diets];
     //     }, []);
       
-    //     const uniqueDiets = [];
+    //     const onlyDiets = [];
       
     //     diets.forEach(diet => {
-    //       if (!uniqueDiets.some(el => el.name === diet)) {
-    //         uniqueDiets.push({ name: diet });
+    //       if (!onlyDiets.some(el => el.name === diet)) {
+    //         onlyDiets.push({ name: diet });
     //       }
     //     });
       
-    //     uniqueDiets.forEach(async diet => {
+    //     onlyDiets.forEach(async diet => {
     //       await diet.findOrCreate({ where: { name: diet.name } });
     //     });
       
-    //     return uniqueDiets;
+    //     return onlyDiets;
     //   };
       
 
