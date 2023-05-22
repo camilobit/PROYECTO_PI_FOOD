@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
 import './Card.css';
+//import { NavLink } from 'react-router-dom';
 
-const Card = ({ name, imagen, diets, id, Close }) => {
+const Card = ({ name, imagen, diets, id }) => {
   useEffect(() => {
     // Lógica para marcar como favorito
   }, []);
+  //console.log(id);
 
   return (
     <div className="tarjeta">
+    {/* <NavLink to={`/detail/${id}`} key={id}> */}
       <div className="ContainerCard">
         <div className="card">
           <div className="imgStore">
@@ -19,21 +22,24 @@ const Card = ({ name, imagen, diets, id, Close }) => {
               alt={name}
             />
             <div className="contentcard">
-                  <h2>{name}</h2>
-              {diets && (
-                <div className="diets">
-                  <span>Diets:</span>
-                  <ul className="ulDiets">
-                    {diets.map((diets, index) => (
-                      <p key={index}>{diets}</p>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+  <h2>{name}</h2>
+  {diets && (
+    <div className="diets">
+      <h3>Diets:</h3>
+      <ul className="ulDiets">
+        <span>{diets.map((diet, index) => (index !== diets.length - 1) ? `${diet}, ` : diet)}</span>
+      </ul>
+    </div>
+  )}
+</div>
+
+                    {/* {diets.map((diets, index) => (
+                      <span key={index}>{diets}</span>
+                    ))} */}
           </div>
         </div>
       </div>
+            {/* </NavLink> */}
     </div>
   );
 };

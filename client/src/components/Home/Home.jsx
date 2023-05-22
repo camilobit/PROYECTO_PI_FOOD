@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 import Filter from '../Filter/Filter'
 import Card from '../Card/Card'
 import Paginado from "../Paginado/Paginado";
-import SearchBar from "../SearchBar/SearchBar";
+import Nav from "../Nav/Nav";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -41,20 +41,21 @@ export default function Home() {
 
   return (
     <div>
+    <Nav
+    handleClick={handleClick}
+    />
+    
       <Filter 
         setCurrentPage={setCurrentPage}
         setOrden={setOrden}
         orden={orden}
       />
-
-      <div>
-      <NavLink to="/recipe">Crear Receta</NavLink>
+      
+      <div className="title">
+      <h1 className="page-title">PROYECT FOOD</h1>
       </div>
-      
-      <h1>PROYECTO FOOD</h1>
-      
+
       <div className="paginado">
-        
         <Paginado
           key="paginado"
           recipesPerPage={recipesPerPage}
@@ -63,24 +64,17 @@ export default function Home() {
           currentPage={currentPage}
         />
       </div>
-      
-      <SearchBar/>
-      <button onClick={(event) => handleClick(event)}>cargar todas las recetas</button>
-      
       {rows.map((row, index) => (
         <div className="row" key={index}>
           {row.map((element) => (
-            
             <NavLink to={"/detail/" + element.id} key={element.id}>
-              
               <Card name={element.name} imagen={element.imagen} diets={element.diets}/>
-            
             </NavLink>
           ))}
+
         </div>
       ))}
-      
-      
+    
       <div className="paginado">
         <Paginado
           key="paginado"
@@ -90,6 +84,17 @@ export default function Home() {
           currentPage={currentPage}
         />
       </div>
+      <section class="sec-footer-cta">
+      <div class="footer-cta">
+        <div class="footer-text">
+          <h4 class="cta-title">Titulo del footer</h4>
+          <p class="cta-description">Texto del footer que hay que editar y extender un poco.</p>
+        </div>
+        <NavLink to={"/about"}>
+        <button class="btn-main">Start earning</button>
+        </NavLink>
+      </div>
+    </section>
     </div>
   );
 }

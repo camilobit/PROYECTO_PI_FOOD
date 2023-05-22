@@ -1,0 +1,36 @@
+.filter-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .filter-item {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .filter-item label {
+    margin-right: 10px;
+  }
+  
+  .filter-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  @media (max-width: 720px) {
+    .filter-item {
+      flex-basis: 50%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .filter-item {
+      flex-basis: 100%;
+    }
+  }
+  

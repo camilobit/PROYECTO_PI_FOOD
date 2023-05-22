@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { getRecipesById } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import "./Details.css";
 
 export default function Details() {
@@ -19,6 +19,9 @@ export default function Details() {
 
   return (
     <div className="details-container">
+    <NavLink to="/home">
+          <button className="back-button">Back</button>
+        </NavLink>
       <img
         src={
           data.imagen ||

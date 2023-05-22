@@ -99,15 +99,15 @@ function rootReducer (state=initialState, action) {
                 return{
                     ...state,
                 }
-        // case 'GET_TYPE_DIETS':
-        //     return {
-        //         ...state,
-        //         typediets : action.payload
-        //     }        
-        // case 'DELETE_RECIPE':
-        //     return{
-        //         ...state,
-        //     }
+        case 'GET_TYPE_DIETS':
+            return {
+                ...state,
+                typediets : action.payload
+            }        
+        case 'DELETE_RECIPE':
+            return{
+                ...state,
+            }
         // case PUT_RECIPE:
         //     return{
         //         ...state,
