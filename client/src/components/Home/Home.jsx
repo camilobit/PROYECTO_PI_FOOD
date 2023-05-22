@@ -8,6 +8,7 @@ import Filter from '../Filter/Filter'
 import Card from '../Card/Card'
 import Paginado from "../Paginado/Paginado";
 import Nav from "../Nav/Nav";
+import Footer from "../Footer/Footer";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ export default function Home() {
   useEffect(() => {
     dispatch(getRecipes());
   }, [dispatch]);
+  
   function handleClick(event) {
     event.preventDefault();
     dispatch(getRecipes());
@@ -32,7 +34,7 @@ export default function Home() {
     setCurrentPage(pageNumber);
   };
 
-  //Crear filas con 3 elementos en cada una
+  // Crear filas con 3 elementos en cada una
   const rows = [];
   for (let i = 0; i < currentRecipes.length; i += 3) {
     const row = currentRecipes.slice(i, i + 3);
@@ -40,11 +42,8 @@ export default function Home() {
   }
 
   return (
-    <div>
-    <Nav
-    handleClick={handleClick}
-    />
-    
+    <div className="container-home">
+      <Nav handleClick={handleClick} />
       <Filter 
         setCurrentPage={setCurrentPage}
         setOrden={setOrden}
@@ -52,7 +51,7 @@ export default function Home() {
       />
       
       <div className="title">
-      <h1 className="page-title">PROYECT FOOD</h1>
+        <h1 className="page-title">PROYECT FOOD</h1>
       </div>
 
       <div className="paginado">
@@ -64,6 +63,7 @@ export default function Home() {
           currentPage={currentPage}
         />
       </div>
+      
       {rows.map((row, index) => (
         <div className="row" key={index}>
           {row.map((element) => (
@@ -71,7 +71,6 @@ export default function Home() {
               <Card name={element.name} imagen={element.imagen} diets={element.diets}/>
             </NavLink>
           ))}
-
         </div>
       ))}
     
@@ -84,17 +83,9 @@ export default function Home() {
           currentPage={currentPage}
         />
       </div>
-      <section class="sec-footer-cta">
-      <div class="footer-cta">
-        <div class="footer-text">
-          <h4 class="cta-title">Titulo del footer</h4>
-          <p class="cta-description">Texto del footer que hay que editar y extender un poco.</p>
-        </div>
-        <NavLink to={"/about"}>
-        <button class="btn-main">Start earning</button>
-        </NavLink>
-      </div>
-    </section>
+
+      <Footer />
     </div>
   );
 }
+

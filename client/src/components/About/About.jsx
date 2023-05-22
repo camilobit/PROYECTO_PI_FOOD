@@ -1,51 +1,46 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import imgperfil from "../imagenes/foto camarera.jpg"
+import imgperfil from "../imagenes/foto_perfil_edit_link.png"
 import { NavLink } from "react-router-dom";
+import './About.css'
 
+export default function About(){
+  return (
+    <div>
+      <NavLink to="/home">
+        <button className="back-button">Back</button>
+      </NavLink>
+      <div className="container-presentation">
+        <div className="subcard colum-rigth">
+          <p id="parrafo" className="fst-italic h4 text-center">Las tecnologías usadas en este proyecto para el Back fueron Node.js, MySql usando a PgAdmin como gestor de mi base de datos, también implementé Axios. Para el Front de esta app utilicé React, Redux y CSS puro para dar los estilos correspondientes. Este proyecto fue realizado completamente desde cero en un tiempo de 15 días, me siento feliz del resultado obtenido. Espero que sea de tu agrado.</p>
+          <h1 className="font-monospace h2">CONOCE MAS SOBRE MI</h1>
 
-const About = () => {
-    return(
-        // <div class="container-about">
-        //     <h1>Work in progress...</h1>
-        //     <p>Camilo está trabajando pronto te sorprenderé...</p>
-        // </div>
+          <div id="container-btn">
+            <button className="btn btn-primary btn-lg">
+              <a href="https://www.linkedin.com/in/camilo-acevedo/" target="_blank" rel="noopener noreferrer">
+                <i className="bi bi-linkedin"></i> LinkedIn
+              </a>
+            </button>
 
-        <div>
-        <NavLink to="/home">
-          <button className="back-button">Back</button>
-        </NavLink>
-            <div class="container-presentation">
-                <div class="subcard colum-rigth">
-                    <p id="parrafo" class="fst-italic h4 text-center">Tecnologias usadas en este proyecto, REACT, REACT-REDUX, CSS, REACT-HOOKS, AJAX. También estamos utilizando los estados locales a con componentes de clase y funcionales, usando eventos DISPATCH.</p>
-                    <h1 class="font-monospace h2">CONOCE MAS SOBRE MI</h1>
+            <button id="btn-secundary" className="btn btn-success btn-md">
+              <a href="https://github.com/camilobit" target="_blank" rel="noopener noreferrer">
+                <i className="bi bi-github"></i> GitHub
+              </a>
+            </button>
+          </div>
 
-                    <div id="container-btn">
-                        <button class="btn btn-primary btn-lg ">            
-                            <a href="https://www.linkedin.com/in/camilo-acevedo/" target="_blank" rel="noreferrer">  <i class="bi bi-linkedin"></i>    LinkedIn</a>
-                        </button>
-
-                        <button id="btn-secundary" class="btn btn-success btn-md ">            
-                            <a href="https://github.com/camilobit" target="_blank" rel="noreferrer">  <i class="bi bi-github"></i>    GitHub</a>
-                        </button>
-                    </div>
-
-
-                    
-                    <h1 class="text-center fs-5">Proyecto de integración módulo 2</h1>
-                </div>
-                
-                <div class="subcard colum-left">
-                    <h1>ABOUT ME</h1>
-                    <h4 class=" text-primary" >Desarrollador de este sitio</h4>
-                    <div class="img-perfil">
-                    <img class="imgperfil" src={imgperfil} />
-                    </div>
-                    <h3>Camilo Acevedo</h3>
-                </div>
-            </div>
+          <h1 className="text-center fs-5">Proyecto Individual Final</h1>
         </div>
-    )
-}
 
-export default About;
+        <div className="subcard colum-left">
+          <h1>ABOUT ME</h1>
+          <h4 className="text-primary">Desarrollador de este sitio</h4>
+          <div className="img-perfil">
+            <img className="imgperfil" src={imgperfil} />
+          </div>
+          <h3>Camilo Acevedo</h3>
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -1,9 +1,9 @@
 .card {
   position: relative;
-  margin: 0.2rem;
+  margin: 2rem;
   width: 18rem;
   height: 25rem;
-  background: #927ea42c;
+  background: #1d1d1dcc;
   border-radius: 3rem;
   overflow: hidden;
 }
@@ -64,7 +64,7 @@
   align-items: center;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #000000;
+  color: #fefafa;
   margin-top: 0;
 }
 
@@ -73,7 +73,7 @@
   align-items: center;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #000000;
+  color: #f5f1f1;
   margin-top: 0;
 }
 
@@ -98,7 +98,7 @@
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
-  color: #111;
+  color: #f3f3f3;
   opacity: 0;
   transform: translateY(50px);
   transition: 0.5s;
@@ -110,7 +110,7 @@
   display: inline-block;
   text-decoration: none;
   font-weight: 600;
-  color: #111;
+  color: #faf9f9;
   opacity: 0;
   transform: translateY(50px);
   transition: 0.5s;

@@ -1,3 +1,6 @@
+.filter-container{
+  background-color: rgba(0, 0, 0, 0.585);
+}
 .filter-row {
     display: flex;
     justify-content: center;

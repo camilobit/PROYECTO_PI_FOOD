@@ -1,5 +1,10 @@
 body {
-  background-color: #eae2e2;
+  
+  background-image: url(./components/imagenes/fondo4.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
   /* background-color:#213547; */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

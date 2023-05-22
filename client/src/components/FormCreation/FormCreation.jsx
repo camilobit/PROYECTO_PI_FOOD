@@ -126,12 +126,11 @@ export default function CreateRecipe() {
       imagen: URL.createObjectURL(file),
     });
   }
-
   return (
     <div className="create-recipe-form">
-      <div>
+      <div className="create-recipe-form2">
         <NavLink to="/home">
-          <button className="back-button">Back</button>
+          <button className="back-button-form">Back</button>
         </NavLink>
         <h1 className="create-recipe-title">Create your recipe</h1>
         <form onSubmit={(e) => handleSubmit(e)}>
@@ -195,9 +194,9 @@ export default function CreateRecipe() {
             <label className="input-label">Select Diet:</label>
             <select className="select-diet" onChange={(e) => handleSelect(e)}>
               <option value="">Select a diet</option>
-              {listDiets.map((diet) => (
-                <option key={diet.name} value={diet.name}>
-                  {diet.name}
+              {listDiets.map((t) => (
+                <option key={t.name} value={t.name}>
+                  {t.name}
                 </option>
               ))}
             </select>

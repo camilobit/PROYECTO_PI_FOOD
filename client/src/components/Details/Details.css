@@ -2,13 +2,19 @@
 
 /* Contenedor principal */
 .details-container {
+  background-image: url(../imagenes/platos-mexicanos-sobre-fondo-negro.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-y: -12rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f8f8f8;
+  /* background-color: #ea9d9d; */
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(238, 234, 234, 0.1);
+  color: white;
 }
 
 /* Imagen de la receta */
@@ -54,6 +60,7 @@
 
 /* Lista de tipos de dieta */
 .details-diet-list {
+  color: black;
   list-style-type: none;
   padding: 0;
   margin: 0;

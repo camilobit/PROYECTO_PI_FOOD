@@ -1,132 +1,139 @@
-.create-recipe-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    padding-top: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .back-button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .create-recipe-title {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .input-container {
-    margin-bottom: 20px;
-  }
-  
-  .input-label {
-    margin-right: 1rem;
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  .input-error {
-    color: #ff0000;
-    margin-top: 4px;
-  }
-  
-  .step-button {
-    margin-top: 1rem;
-    padding: 10px 20px;
-    background-color: #66afe9;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .container-img {
-    display: flex;
-    align-items: center;
-  }
-  
-  .image-upload {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    margin-right: 10px;
-  }
-  
-  .preview-image {
-    max-width: 200px;
-    max-height: 200px;
-  }
-  
-  .select-diet {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-  }
-  
-  .error-message {
-    color: #ff0000;
-    margin-top: 10px;
-  }
-  
-  .create-button {
-    padding: 10px 20px;
-    background-color: #66afe9;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+body {
+  background-color: rgb(255, 162, 162);
+}
 
-  .selected-diets {
-    margin-top: 20px;
-  }
-  
-  .selected-diet {
-    display: inline-flex;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 5px;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  
-  .delete-diet-button {
-    background-color: transparent;
-    border: none;
-    color: red;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  .delete-diet-button:hover {
-    text-decoration: underline;
-  }
-  
-  .selected-diet span {
-    margin-right: 5px;
-  }
-  
-  
-  
+.create-recipe-form {
+  background-image: url(../imagenes/fondoformulario.avif);
+  max-width: 40%;
+  height: 100%;
+  margin: auto;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  padding: 2rem;
+  padding-top: 0.5rem;
+  /* background-color: #f9f9f9; */
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+
+}
+
+.back-button-form {
+  padding: 0.5rem 2rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-bottom: 0%;
+}
+
+.create-recipe-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.input-container {
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  margin-right: 0.625rem;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.625rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #ccc;
+}
+
+.input-error {
+  color: #ff0000;
+  margin-top: 0.25rem;
+}
+
+.step-button {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: #66afe9;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.container-img {
+  display: flex;
+  align-items: center;
+}
+
+.image-upload {
+  padding: 0.625rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #ccc;
+  margin-right: 0.625rem;
+}
+
+.preview-image {
+  max-width: 12.5rem;
+  max-height: 12.5rem;
+}
+
+.select-diet {
+  width: 100%;
+  padding: 0.625rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #ccc;
+  margin-bottom: 1.25rem;
+}
+
+.error-message {
+  color: #ff0000;
+  margin-top: 0.625rem;
+}
+
+.create-button {
+  padding: 0.5rem 2rem;
+  background-color: #66afe9;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.selected-diets {
+  margin-top: 1rem;
+}
+
+.selected-diet {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 0.3125rem;
+  border-radius: 0.25rem;
+  margin-right: 0.625rem;
+}
+
+.delete-diet-button {
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 0.3125rem;
+}
+
+.delete-diet-button:hover {
+  text-decoration: underline;
+}
+
+.selected-diet span {
+  margin-right: 0.3125rem;
+}
