@@ -7,6 +7,7 @@ const Card = ({ name, imagen, diets, id }) => {
     // Lógica para marcar como favorito
   }, []);
   //console.log(id);
+  
 
   return (
     <div className="tarjeta">

@@ -85,7 +85,7 @@ export function postRecipes (payload){
 
 export function deleteRecipes (id){
     return async function(dispatch){
-        var json = await axios.delete(`/recipe/${id}`);
+        var json = await axios.delete(`http://localhost:3001/recipe/delete/${id}`);
         return dispatch({
             type : DELETE_RECIPE,
             payload: json.data

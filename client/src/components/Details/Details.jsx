@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getRecipesById } from "../../redux/actions";
+import { getRecipesById, deleteRecipes } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import "./Details.css";
@@ -12,9 +12,14 @@ export default function Details() {
   useEffect(() => {
     dispatch(getRecipesById(id));
   }, [dispatch, id]);
+  console.log(data)
 
   if (!data || !data.process) {
     return <div>Loading...</div>;
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    dispatch(deleteRecipes(id))
   }
 
   return (
@@ -22,6 +27,9 @@ export default function Details() {
     <NavLink to="/home">
           <button className="back-button">Back</button>
         </NavLink>
+        <button onClick={handleSubmit}>
+          eliminar
+        </button>
       <img
         src={
           data.imagen ||
@@ -40,7 +48,7 @@ export default function Details() {
         <hr />
         <h3 className="details-type-diet">Type Diet:</h3>
         <ul className="details-diet-list">
-          {data.diets.map((t, index4) => (
+          {data.typeDiets.map((t, index4) => (
             <li key={index4} className="details-diet-item">
               {t}
             </li>

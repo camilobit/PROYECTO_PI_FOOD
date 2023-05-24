@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { getTypeDiets, postRecipes } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "./FormCreation.css";
-import image from '../imagenes/foto camarera.jpg'
+import imageDefault from '../imagenes/foto camarera.jpg'
 
 function controlForm(input) {
   const reg = new RegExp("^[0-9]+$");
@@ -16,7 +16,7 @@ function controlForm(input) {
     !reg.test(input.healthScore)
   )
     errors.healthScore = "Please enter a health score between 0-100";
-  if (!input.diets) errors.diets = "Please enter the diets of the recipe";
+  if (!input.typeDiets) errors.typeDiets = "Please enter the typeDiets of the recipe";
   return errors;
 }
 
@@ -32,7 +32,7 @@ export default function CreateRecipe() {
     summary: "",
     healthScore: "",
     process: "",
-    diets: [],
+    typeDiets: [],
     imagen: "",
   });
 
@@ -62,24 +62,26 @@ export default function CreateRecipe() {
   function handleSelect(e) {
     setInput({
       ...input,
-      diets: [...input.diets, e.target.value],
+      typeDiets: [...input.typeDiets, e.target.value],
     });
   }
 
   function handleDelete(diet) {
     setInput({
       ...input,
-      diets: input.diets.filter((d) => d !== diet),
+      typeDiets: input.typeDiets.filter((d) => d !== diet),
     });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    console.log(input.typeDiets);
+    const imagenDefault = imageDefault;
     const recipeData = {
       ...input,
-      image: image,
+      imagen: input.imagen || imagenDefault,
     };
+    console.log(recipeData);
 
     dispatch(postRecipes(recipeData));
 
@@ -88,7 +90,7 @@ export default function CreateRecipe() {
       input.summary &&
       input.healthScore &&
       input.process &&
-      input.diets
+      input.typeDiets
     ) {
       alert("Recipe created");
       setInput({
@@ -96,7 +98,7 @@ export default function CreateRecipe() {
         summary: "",
         healthScore: "",
         process: "",
-        diets: [],
+        typeDiets: [],
         imagen: "",
       });
     } else {
@@ -126,6 +128,8 @@ export default function CreateRecipe() {
       imagen: URL.createObjectURL(file),
     });
   }
+  console.log(input);
+  //console.log(recipeData);
   return (
     <div className="create-recipe-form">
       <div className="create-recipe-form2">
@@ -185,6 +189,15 @@ export default function CreateRecipe() {
           <div className="input-container container-img">
             <label className="input-label">Image:</label>
             <input type="file" accept="image/*" onChange={handleImageUpload} className="image-upload" />
+          </div>
+
+          <div className="input-container container-img">
+            <label className="input-label">Image URL:</label>
+            <input 
+            type="text"
+            name="imagen"
+            value={input.imagen}
+            onChange={(e) => handleChange(e)} className="image-upload" />
             {input.imagen && (
               <img src={input.imagen} alt="Recipe" className="preview-image" />
             )}
@@ -200,8 +213,8 @@ export default function CreateRecipe() {
                 </option>
               ))}
             </select>
-            <div className="selected-diets">
-              {input.diets.map((diet) => (
+            <div className="selected-typeDiets">
+              {input.typeDiets.map((diet) => (
                 <div key={diet} className="selected-diet">
                   <button
                     className="delete-diet-button"

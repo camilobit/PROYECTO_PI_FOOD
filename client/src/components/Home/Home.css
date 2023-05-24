@@ -1,8 +1,26 @@
 .row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row > * {
+  flex-basis: calc(30% - 2rem); /* Ancho base de cada tarjeta */
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .row > * {
+    flex-basis: calc(30% - 20px); /* Ancho de las tarjetas en pantallas más pequeñas */
   }
+}
+
+@media (max-width: 576px) {
+  .row > * {
+    flex-basis: calc(100% - 20px); /* Ancho de las tarjetas en pantallas aún más pequeñas */
+  }
+}
+
 .title {
   display: flex;
   justify-content: center;
