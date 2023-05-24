@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { getRecipesById, deleteRecipes } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
@@ -9,19 +9,36 @@ export default function Details() {
   const data = useSelector((state) => state.data);
   const { id } = useParams();
 
+  const [fromApi, setFromApi] = useState(false);
+
   useEffect(() => {
     dispatch(getRecipesById(id));
   }, [dispatch, id]);
-  console.log(data)
 
-  if (!data || !data.process) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    if (data && data.fromApi) {
+      setFromApi(true);
+    }
+  }, [data]);
+
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(deleteRecipes(id))
+    if (fromApi) {
+      alert("Esta receta viene de la API y no puede ser eliminada.");
+    } else {
+      dispatch(deleteRecipes(id))
+        .then(() => {
+          alert("Receta Eliminada...");
+        })
+        .catch(() => {
+          alert("Las Recetas Provenientes de la API no pueden ser borradas");
+        });
+    }
+  
+  }  
+  if (!data || !data.process) {
+    return <div>componente de cargando</div>;
   }
-
   return (
     <div className="details-container">
     <NavLink to="/home">
