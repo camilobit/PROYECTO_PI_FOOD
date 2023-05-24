@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const{Recipe,Diets} = require('../../../db')
+const{Recipe,TypeDiet} = require('../../../db')
 const router = Router();
 
 router.post('/', async (req,res,next) => {
@@ -24,8 +24,8 @@ router.post('/', async (req,res,next) => {
             process,
             createdInDb
     })
-    let dietTypeDb = await Diets.findAll({ where:{ name:typeDiets } })
-        createRecipe.addDiets(dietTypeDb)
+    let dietTypeDb = await TypeDiet.findAll({ where:{ name: typeDiets } })
+        createRecipe.addTypeDiet(dietTypeDb)
         res.status(200).send('recipe created')   
 
     }catch(e){
@@ -33,16 +33,6 @@ router.post('/', async (req,res,next) => {
     }
 }});
 
-router.delete('/:id',async (req,res) =>{
-    const {id} = req.params
-    try {
-        let recipe = await Recipe.findByPk(id)
-        await recipe.destroy()
-        res.status(200).send('Recipe deleted')
-    } catch (err) {
-        res.status(400).send('Recipe not found')
-    }
-})
 
 
 
@@ -52,7 +42,7 @@ router.delete('/:id',async (req,res) =>{
 
 // const { Router } = require('express');
 // const router = Router();
-// const { Recipe, Diets } = require('../../../db')
+// const { Recipe, TypeDiet } = require('../../../db')
 
 
 // router.post('/', async (req, res) => {
@@ -63,7 +53,7 @@ router.delete('/:id',async (req,res) =>{
 //         healthScore,
 //         process,
 //         createdInDb,
-//         diets
+//         typeDiets
 //     } = req.body;
 
 //     let recipeCreated = await Recipe.create({
@@ -75,8 +65,8 @@ router.delete('/:id',async (req,res) =>{
 //         createdInDb
 // })
 
-//     let dietsDb = await Diets.findAll({ 
-//         where: { name: diets } 
+//     let dietsDb = await TypeDiet.findAll({ 
+//         where: { name: typeDiets } 
 //         })
 //     recipeCreated.addDiets(dietsDb)
 //     res.status(200).send('Personaje creado con exito')

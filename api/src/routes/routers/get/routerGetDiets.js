@@ -5,7 +5,7 @@ const controllerGetDiets = require('../../controllers/get/controllerGetDiets')
 
 router.get('/diets', async (req, res) => {
     const allDiets = await controllerGetDiets();
-    res.status(200).send(allDiets)
+    res.status(200).json(allDiets)
 })
 
 
