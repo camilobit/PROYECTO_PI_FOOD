@@ -2,12 +2,14 @@
 
 .diet-images {
   padding: 0.5rem;
-  height: 10rem;
-  background-color: #f8f8f8;
+  height: 7rem;
+  background-color: #53ed5d;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .diet-image {
@@ -76,6 +78,7 @@
   width: 10rem;
 }
 .bar-promo{
+  margin-bottom: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +86,9 @@
   font-style: oblique;
   color: aliceblue;
   height: 3.5rem;
-  background-color: #010B51;
+  background-color: #15238d;
+  border-radius: 5px;
+  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.5);
 }
 .btn-promo{
   padding: 0.5rem;
