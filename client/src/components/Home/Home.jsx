@@ -33,7 +33,9 @@ export default function Home() {
     setCurrentPage(pageNumber);
   };
 
+
   return (
+    <div className="HomeAll">
     <div className="container-home">
       <Nav handleClick={handleClick} />
       <Filter
@@ -75,6 +77,7 @@ export default function Home() {
       </div>
 
       <Footer />
+    </div>
     </div>
   );
 }

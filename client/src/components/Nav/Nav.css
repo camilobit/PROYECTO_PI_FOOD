@@ -2,14 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#FF2525;
+    background-color:rgb(232, 225, 199);
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.309);
   }
   
   .nav-button {
     background-color:#D6D6D6;
-    color:black;
+    color:#F16330;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;

@@ -2,9 +2,8 @@
   position: relative;
   margin: 2rem;
   width: 18rem;
-  height: 25rem;
-  background: #1d1d1dcc;
-  border-radius: 3rem;
+  height: 30rem;
+  background: #f3f3f3;
   overflow: hidden;
 }
 
@@ -18,8 +17,8 @@
 
 .card .imgStore {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 40%;
+  transform: translateY(-40%);
   z-index: 10000;
   width: 100%;
   height: 15rem;
@@ -32,19 +31,18 @@
 }
 
 .card .imgStore img {
-  border-radius: 8rem;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%) ;
-  width: 20rem;
+  width: 32rem;
 }
 
 .card .contentcard {
   position: absolute;
   bottom: 0; 
   width: 100%;
-  height: 7.5rem;
+  height: 7rem;
   text-align: center;
   justify-content: center;
   transition: 1s;
@@ -57,7 +55,7 @@
   font-weight: 600;
   letter-spacing: 1px;
   color: #000000;
-  margin-top: 0;
+  margin-top: 1rem;
 }
 .card .contentcard h3 {
   position: relative;
@@ -86,7 +84,7 @@
   text-decoration: none;
   font-weight: 600;
   color: #111;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(50px);
   transition: 0.5s;
   margin-top: 8px;
@@ -98,7 +96,7 @@
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
-  color: #f3f3f3;
+  color: #0f0f0f;
   opacity: 0;
   transform: translateY(50px);
   transition: 0.5s;
@@ -110,7 +108,7 @@
   display: inline-block;
   text-decoration: none;
   font-weight: 600;
-  color: #faf9f9;
+  color: #090909;
   opacity: 0;
   transform: translateY(50px);
   transition: 0.5s;
@@ -120,7 +118,7 @@
   display: flex;
   flex-direction: column;
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(6rem);
   transition-delay: 0s;
 }
 
@@ -128,7 +126,7 @@
   display: flex;
   flex-direction: column;
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(4rem);
   transition-delay: 0s;
 }
 
@@ -136,48 +134,15 @@
   display: flex;
   flex-direction: column;
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(3.5rem);
   transition-delay: 0s;
 }
 .ulDiets{
   justify-content: center;
 }
 
-/* .checkbox {
-  display: inline-block;
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  font-size: 18px;
-  user-select: none;
-} */
-
-/* .checkbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-} */
-
-/* .checkbox:hover input ~ .checkmark {
-  background-color: #ccc;
-} */
-
-/* .checkbox input:checked ~ .checkmark {
-  background-color: #2196F3;
-} */
-
-/* .checkbox input:checked ~ .checkmark:after {
-  display: block;
+.tarjeta{
+  background-color: #f3f3f3;
+  height: 30rem;
+  width: 22rem;
 }
-
-.checkbox .checkmark:after {
-  left: 7px;
-  top: 3px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate
-  (45deg);
-} */

@@ -11,7 +11,7 @@ const Card = ({ name, imagen, diets, id }) => {
 
   return (
     <div className="tarjeta">
-    {/* <NavLink to={`/detail/${id}`} key={id}> */}
+    {/* <NavLink to={`/detail/${id}`} key={id}/> */}
       <div className="ContainerCard">
         <div className="card">
           <div className="imgStore">

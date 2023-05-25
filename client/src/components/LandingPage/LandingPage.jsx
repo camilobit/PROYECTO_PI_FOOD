@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-//import video from '../imagenes/videolandingMP4';
-import './LandingPage.css'
+import './LandingPage.css';
+
 
 export default function LandingPage() {
+  const [loading, setLoading] = useState(false);
+
+  const handleExploreRecipes = () => {
+    setLoading(true);
+    // Aquí puedes realizar tareas adicionales antes de redirigir a la ruta '/home'
+  };
+
   return (
-    <div>
-      {/* <div className='contentVideo'>
-        <video autoPlay loop muted className="imgLanding" width="100%">
-          <source src={video} type="video/mp4" />
-          Tu navegador no admite el elemento de video.
-        </video>
-      </div> */}
-      <div className='containerLanding'>
-      <h1 className="title">Enter your favorite recipe book and calm your craving</h1>
-      <NavLink className='NavLink' to="/home">
-        <button>Login</button>
-      </NavLink>
+    <div className="All">
+      <div className="content">
+        {loading ? (
+          <div>Cargando...</div>
+        ) : (
+          <NavLink className="NavLink" to="/home" onClick={handleExploreRecipes}>
+            <button>Explorar Recetas</button>
+          </NavLink>
+        )}
       </div>
     </div>
   );
 }
-

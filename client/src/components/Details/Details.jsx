@@ -3,6 +3,7 @@ import { getRecipesById, deleteRecipes } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import "./Details.css";
+import video from '../imagenes/Cargando....mp4'
 
 export default function Details() {
   const dispatch = useDispatch();
@@ -36,11 +37,20 @@ export default function Details() {
     }
   
   }  
-  if (!data || !data.process) {
-    return <div>componente de cargando</div>;
+  if (!data || !data.process || !data.imagen || !data.typeDiets || !data.name) {
+    return <div>
+      <div className="all-details">
+  <div className="all-loader">
+    <video className="loading" src={video} autoPlay loop></video>
+    <h5>Estamos cocinando tu receta</h5>
+  </div>
+</div>
+    </div>
   }
   return (
     <div className="details-container">
+    
+
     <NavLink to="/home">
           <button className="back-button">Back</button>
         </NavLink>

@@ -1,39 +1,124 @@
-.filter-container{
-  background-color: rgba(0, 0, 0, 0.585);
+/* Estilos de las imágenes */
+
+.diet-images {
+  padding: 0.5rem;
+  height: 10rem;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.diet-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.diet-image img {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diet-image span {
+  color: #333;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.diet-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos generales */
+
+.filter-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .filter-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
+  display: flex;
+  justify-content: first baseline;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  width: 20rem;
+}
+
+.filter-item label {
+  margin-right: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.filter-select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+  width: 10rem;
+}
+.bar-promo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-style: oblique;
+  color: aliceblue;
+  height: 3.5rem;
+  background-color: #010B51;
+}
+.btn-promo{
+  padding: 0.5rem;
+  font-style: italic;
+  color: #f8f8f8;
+  border-radius: 2rem;
+  margin: 1rem;
+  background-color: #29D884;
+}
+
+
+@media (max-width: 720px) {
   .filter-item {
-    display: flex;
+    flex-basis: 50%;
+  }
+  .filter-row {
+    flex-direction: row;
     align-items: center;
-    margin: 10px;
+    justify-content: space-between;
   }
   
-  .filter-item label {
-    margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+  .filter-item {
+    flex-basis: 100%;
   }
   
-  .filter-select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+  .filter-row {
+    flex-direction: column;
+    align-items: flex-start;
   }
   
-  @media (max-width: 720px) {
-    .filter-item {
-      flex-basis: 50%;
-    }
+  .filter-select:not(:first-child) {
+    margin-top: 10px;
   }
-  
-  @media (max-width: 480px) {
-    .filter-item {
-      flex-basis: 100%;
-    }
-  }
-  
+}
+

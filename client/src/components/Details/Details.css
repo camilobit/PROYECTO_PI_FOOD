@@ -1,12 +1,30 @@
 /* Details.css */
+.all-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.all-loader {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.loading {
+  border-radius: 20%;
+  margin-top: 4rem;
+  margin-left: 35%;
+  width: 30%;
+  max-width: 500px;
+}
+
+
+
+
 
 /* Contenedor principal */
 .details-container {
-  background-image: url(../imagenes/platos-mexicanos-sobre-fondo-negro.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position-y: -12rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +32,7 @@
   /* background-color: #ea9d9d; */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(238, 234, 234, 0.1);
-  color: white;
+  color: black;
 }
 
 /* Imagen de la receta */
