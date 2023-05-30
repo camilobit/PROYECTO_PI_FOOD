@@ -1,6 +1,9 @@
 import { GET_RECIPES, FILTER_BY_TYPEDIET, FILTER_CREATED, 
-ORDER_BY_NAME, ORDER_BY_PUNTUATION, GET_BY_NAME, GET_BY_ID, GET_TYPE_DIETS, DELETE_RECIPE, } from './action-types'
+ORDER_BY_NAME, ORDER_BY_PUNTUATION, GET_BY_NAME, GET_BY_ID, GET_TYPE_DIETS, DELETE_RECIPE, NEW_API } from './action-types'
 import axios from 'axios';
+
+const API_KEY ='84b449dbfc2e4a2ba25a8d6d6c842cd1'
+
 
 export const getRecipes = () => {
     return async function(dispacth){
@@ -8,6 +11,17 @@ export const getRecipes = () => {
         });
         return dispacth({
             type: GET_RECIPES,
+            payload: json.data
+        }) 
+    }
+}
+
+export function recipesApiNew (){
+    return async function(dispacth){
+        var json = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=10&addRecipeInformation=true`, {
+        });
+        return dispacth({
+            type: NEW_API,
             payload: json.data
         }) 
     }
@@ -93,3 +107,4 @@ export function deleteRecipes (id){
     }
     
 }
+

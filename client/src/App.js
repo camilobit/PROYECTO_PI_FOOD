@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Detail from './components/Details/Details';
 import FormCreation from './components/FormCreation/FormCreation'
 import About from './components/About/About';
+// import Loader2 from './components/Loaders/Loader2'
 
 
 
@@ -18,6 +19,8 @@ function App() {
           <Route path= '/detail/:id' component={Detail} />
           <Route path= '/recipe' component={FormCreation} />
           <Route path= '/about' component={About} />
+          {/* esta ruta esta diseñada unicamente para visualizar los loaders ya que estan diseñados como componentes independientes, puedes descomentar y probar otro loader diferentes */}
+          {/* <Route path= '/init' component={Loader2}/> */}
         </Switch>
       </BrowserRouter>
     </div>

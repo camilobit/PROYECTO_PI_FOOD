@@ -1,10 +1,10 @@
 body {
   
-  background-image: url(./components/imagenes/imagenbody.png);
-  background-repeat: no-repeat;
+  background-image: url(./components/imagenes/doodle.png);
   background-size: cover;
   background-attachment: fixed;
-  /* background-color:#213547; */
+  /* background-color:#2d475e62; */
+  
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

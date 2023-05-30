@@ -7,3 +7,4 @@ export const GET_BY_ID = 'GET_BY_ID';
 export const  GET_TYPE_DIETS = 'GET_TYPE_DIETS';
 export const DELETE_RECIPE = 'DELETE_RECIPE';
 export const FILTER_CREATED = "FILTER_CREATED";
+export const NEW_API = "NEW_API"

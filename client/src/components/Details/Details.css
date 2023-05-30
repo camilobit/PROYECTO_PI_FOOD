@@ -1,44 +1,30 @@
-/* Details.css */
-.all-details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.all-loader {
-  margin-top: 4rem;
-  text-align: center;
-}
-
-.loading {
-  border-radius: 20%;
-  margin-top: 4rem;
-  margin-left: 35%;
-  width: 30%;
-  max-width: 500px;
-}
-
-
-
-
-
 /* Contenedor principal */
 .details-container {
   display: flex;
+  padding: 20px;
+}
+
+.container-buttons{
+  margin-bottom: 7rem;
+}
+
+.container-left-details{
+  display: flex;
+  position: fixed;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  /* background-color: #ea9d9d; */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(238, 234, 234, 0.1);
-  color: black;
+  width: 50%;
+  margin: auto;
+}
+
+.button-eliminar {
+  margin-left: 3rem;
 }
 
 /* Imagen de la receta */
 .details-image {
-  width: 300px;
-  height: 200px;
+  width: 80%;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -46,9 +32,12 @@
 
 /* Información de la receta */
 .details-info {
-  width: 100%;
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border-radius: 3%;
   max-width: 600px;
   text-align: center;
+  margin-left: 53%;
 }
 
 /* ID de la receta */
@@ -72,6 +61,9 @@
 
 /* Tipo de dieta */
 .details-type-diet {
+  background-color: #FFF3E0;
+  border-radius: 3%;
+  padding-bottom: 0.5rem;
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -82,6 +74,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
 }
@@ -90,7 +83,7 @@
 .details-diet-item {
   margin: 0 5px;
   padding: 5px 10px;
-  background-color: #f1f1f1;
+  background-color: #ffe1b1;
   border-radius: 4px;
   font-size: 14px;
 }
@@ -104,6 +97,9 @@
 
 /* Pasos de la receta */
 .details-steps {
+  border-radius: 3%;
+  padding: 1rem;
+  background-color: #FFF3E0;
   text-align: left;
 }
 
@@ -115,6 +111,9 @@
 
 /* Elemento de la lista de pasos */
 .details-step-item {
+  padding: 1rem;
+  border-radius: 3%;
+  background-color: #ffe1b1;
   margin-bottom: 10px;
   font-size: 16px;
 }

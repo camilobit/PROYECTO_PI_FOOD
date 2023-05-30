@@ -1,35 +1,29 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useEffect } from "react";
 import imgperfil from "../imagenes/foto_perfil_edit_link.png";
 import { NavLink } from "react-router-dom";
 import "./About.css";
-import videofondo from "../imagenes/fondo animadode landingpage.mp4";
+import video from '../imagenes/fondo animadode landingpage.mp4'
 
 export default function About() {
-  // Referencia al elemento de video
-  const videoRef = React.useRef(null);
-
-  // Función para ajustar la velocidad de reproducción del video
-  const setVideoPlaybackRate = (rate) => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = rate;
+  useEffect(() => {
+    const videoLento = document.getElementById('myVideo');
+    if (videoLento) {
+      // Cambiar la velocidad de reproducción a 0.5x
+      videoLento.playbackRate = 0.3;
     }
-  };
-
-  // Al cargar el componente, establecer la velocidad de reproducción del video
-  React.useEffect(() => {
-    setVideoPlaybackRate(0.3); // Ajusta la velocidad de reproducción según tus necesidades
   }, []);
 
   return (
     <div className="all-about">
-      <div className="video-container">
-        <video ref={videoRef} autoPlay loop>
-          <source src={videofondo} type="video/mp4" />
-        </video>
-      </div>
+    <div className="content-video-about">
+
+    
+    <video id="myVideo" className="video-about" src={video} autoPlay muted loop  ></video>
+    </div>
 
       
+
         <NavLink to="/home">
           <button className="back-button">Back</button>
         </NavLink>
@@ -80,6 +74,7 @@ export default function About() {
             <h3>Camilo Acevedo</h3>
           </div>
         </div>
+      
       </div>
     
   );

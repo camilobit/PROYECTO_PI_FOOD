@@ -8,13 +8,29 @@ import Card from '../Card/Card';
 import Paginado from "../Paginado/Paginado";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
+import Loader1 from '../Loaders/Loader1'
 
 export default function Home() {
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   useEffect(() => {
     dispatch(getRecipes());
   }, [dispatch]);
+
+
 
   function handleClick(event) {
     event.preventDefault();
@@ -32,7 +48,13 @@ export default function Home() {
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
+  if (isLoading) {
+    return (
+      <div>
+        <Loader1/>
+      </div>
+    );
+  }
 
   return (
     <div className="HomeAll">
@@ -61,7 +83,7 @@ export default function Home() {
       <div className="row">
         {currentRecipes.map((element) => (
           <NavLink to={"/detail/" + element.id} key={element.id}>
-            <Card name={element.name} imagen={element.imagen} diets={element.diets} />
+            <Card name={element.name} imagen={element.imagen} diets={element.diets} typeDiets={element.typeDiets} />
           </NavLink>
         ))}
       </div>

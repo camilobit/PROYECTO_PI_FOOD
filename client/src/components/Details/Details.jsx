@@ -3,14 +3,26 @@ import { getRecipesById, deleteRecipes } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import "./Details.css";
-import video from '../imagenes/Cargando....mp4'
+import Loader2 from '../Loaders/Loader2'
 
 export default function Details() {
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(true);
   const data = useSelector((state) => state.data);
   const { id } = useParams();
-
   const [fromApi, setFromApi] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   useEffect(() => {
     dispatch(getRecipesById(id));
@@ -37,26 +49,24 @@ export default function Details() {
     }
   
   }  
-  if (!data || !data.process || !data.imagen || !data.typeDiets || !data.name) {
-    return <div>
-      <div className="all-details">
-  <div className="all-loader">
-    <video className="loading" src={video} autoPlay loop></video>
-    <h5>Estamos cocinando tu receta</h5>
-  </div>
-</div>
-    </div>
+  if (isLoading) {
+    return (
+      <div>
+        <Loader2/>
+      </div>
+    );
   }
   return (
     <div className="details-container">
-    
-
-    <NavLink to="/home">
-          <button className="back-button">Back</button>
+    <div className="container-left-details">
+      <div className="container-buttons">
+        <NavLink to="/home">
+              <button type="button" class="btn btn-secondary">Back</button>
         </NavLink>
-        <button onClick={handleSubmit}>
-          eliminar
+        <button className="button-eliminar btn btn-danger" onClick={handleSubmit}>
+          Delete Recipe
         </button>
+      </div>
       <img
         src={
           data.imagen ||
@@ -65,15 +75,13 @@ export default function Details() {
         alt={data.name}
         className="details-image"
       />
-      <hr />
+    </div>
+
       <div className="details-info">
-        <span className="details-id">{data.id}</span>
-        <hr />
+        {/* <span className="details-id">{data.id}</span> */}
         <h2 className="details-name">{data.name}</h2>
-        <hr />
         <h3 className="details-healthscore">HealthScore: {data.healthScore}</h3>
-        <hr />
-        <h3 className="details-type-diet">Type Diet:</h3>
+        <h3 className="details-type-diet">Type Diet:
         <ul className="details-diet-list">
           {data.typeDiets.map((t, index4) => (
             <li key={index4} className="details-diet-item">
@@ -81,9 +89,13 @@ export default function Details() {
             </li>
           ))}
         </ul>
+        </h3>
         <hr />
         <h5 className="details-summary">
-          Summary: {data.summary.replace(/(<([^>]+)>)/gi, "")}
+          SUMMARY
+          <h4>
+          {data.summary.replace(/(<([^>]+)>)/gi, "")}
+          </h4>
         </h5>
         <div className="details-steps">
           <h5>Steps:</h5>

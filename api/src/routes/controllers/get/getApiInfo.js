@@ -1,8 +1,8 @@
 const axios = require('axios');
 require('dotenv').config();
 // const formateRecipe = require("../../helpers/formateRecipes");
-const { API_KEY } = process.env;
-const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=10&addRecipeInformation=true`;
+//const { API_KEY } = process.env;
+const url = 'https://run.mocky.io/v3/c4ba1bae-5ad4-4440-be08-eaf2387021b3';
 
 const getApiInfo = async () => {
         const apiUrl = await axios.get(url)

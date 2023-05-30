@@ -14,6 +14,12 @@ function rootReducer (state=initialState, action) {
                 allRecipes: action.payload,
                 
             }
+        case 'NEW_API':
+            return {
+                ...state,
+                recipes: action.payload, 
+                allRecipes: action.payload,
+            }    
         case 'FILTER_BY_TYPEDIET':
     const allRecDiet = state.allRecipes
     const typeDietFilter = allRecDiet.filter((recipes) => {

@@ -1,17 +1,24 @@
-.All{
+.All {
   position: fixed;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  height: 130%;
-  background-image: url(../imagenes/fondoimagenlanding\ con\ texto.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-
-
+  height: 100%;
+  background-color: #FFFFFF;
 }
 
-.title button {
+.container-left-landing {
+  width: 40%;
+}
+.container-rigth-landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+
+.NavLink button {
   background-color: #ff5722;
   color: #fff;
   font-size: 1rem;
@@ -30,23 +37,29 @@
   text-decoration: none;
 }
 
-.NavLink button {
-  background-color: #ff5722;
-  color: #fff;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
 .NavLink button:hover {
   background-color: #e64a19;
 }
 
+.container-img-landingpage img {
+  height: 100vh;
+  width: 100%;
+}
+
+.container-video-landingpage video {
+  border-radius: 100%;
+  height: 35vh;
+  width: auto;
+}
+.container-text{
+  width: 50%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+}
 .content {
   position: fixed;
-  bottom: 7rem;
-  right: 12rem;
+  display: flex;
+  align-items: center;
+  margin-top: 27.7%;
 }
