@@ -1,11 +1,11 @@
 const axios = require('axios');
 require('dotenv').config();
-// const formateRecipe = require("../../helpers/formateRecipes");
-//const { API_KEY } = process.env;
-const url = 'https://run.mocky.io/v3/c4ba1bae-5ad4-4440-be08-eaf2387021b3';
+//const formateRecipe = require("../../helpers/formateRecipes");
+const { URL_BASE } = process.env;
+
 
 const getApiInfo = async () => {
-        const apiUrl = await axios.get(url)
+        const apiUrl = await axios.get(URL_BASE)
         const apiInfo = await apiUrl.data.results.map( data => {
             return {
                 id:data.id,
