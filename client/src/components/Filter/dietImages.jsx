@@ -16,7 +16,7 @@ const dietImages = {
   "gluten free": glutenFreeImage,
   "dairy free": dairyFreeImage,
   "ketogenic": ketogenicImage,
-  "Lacto Ovo Vegetarian": lactoOvoImage,
+  "lacto ovo vegetarian": lactoOvoImage,
   "vegan": veganImage,
   "pescatarian": pescatarianImage,
   "paleolithic": paleolithicImage,

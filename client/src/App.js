@@ -5,7 +5,10 @@ import Home from './components/Home/Home';
 import Detail from './components/Details/Details';
 import FormCreation from './components/FormCreation/FormCreation'
 import About from './components/About/About';
+import axios from 'axios';
 // import Loader2 from './components/Loaders/Loader2'
+
+axios.defaults.baseURL= "http://localhost:3001/"
 
 
 

@@ -7,7 +7,7 @@ const API_KEY ='84b449dbfc2e4a2ba25a8d6d6c842cd1'
 
 export const getRecipes = () => {
     return async function(dispacth){
-        var json = await axios.get("http://localhost:3001/recipes", {
+        var json = await axios.get("/recipes", {
         });
         return dispacth({
             type: GET_RECIPES,
@@ -59,7 +59,7 @@ export function orderByPuntuation (payload){
 
 export function getRecipesByName (name){
     return async function(dispatch){
-        await axios.get(`http://localhost:3001/recipes?name=${name}`)
+        await axios.get(`/recipes?name=${name}`)
         .then((response) =>{
             return dispatch({type: GET_BY_NAME, payload: response.data})
             }).catch((error) =>{
@@ -70,7 +70,7 @@ export function getRecipesByName (name){
 
 export function getRecipesById (id){
     return async function(dispatch){
-        var json = await axios.get(`http://localhost:3001/recipes/${id}`);
+        var json = await axios.get(`/recipes/${id}`);
     return dispatch( {
         type : GET_BY_ID,
         payload: json.data
@@ -80,7 +80,7 @@ export function getRecipesById (id){
 
 export function getTypeDiets (){
     return async function(dispatch){
-        var json = await axios.get("http://localhost:3001/diets");
+        var json = await axios.get("/diets");
         return dispatch( {
             type : GET_TYPE_DIETS,
             payload: json.data
@@ -91,7 +91,7 @@ export function getTypeDiets (){
 
 export function postRecipes (payload){
     return async function(dispatch){
-        var json = await axios.post("http://localhost:3001/recipe",payload);
+        var json = await axios.post("/recipe",payload);
         return json
     }
 }
@@ -99,7 +99,7 @@ export function postRecipes (payload){
 
 export function deleteRecipes (id){
     return async function(dispatch){
-        var json = await axios.delete(`http://localhost:3001/recipe/delete/${id}`);
+        var json = await axios.delete(`/recipe/delete/${id}`);
         return dispatch({
             type : DELETE_RECIPE,
             payload: json.data
