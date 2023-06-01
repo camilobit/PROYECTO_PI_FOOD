@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export const getRecipes = () => {
     return async function(dispacth){
-        var json = await axios.get(`/recipes`, {
+        var json = await axios.get("/recipes", {
         });
         return dispacth({
             type: GET_RECIPES,
@@ -67,7 +67,7 @@ export function getRecipesById (id){
 
 export function getTypeDiets (){
     return async function(dispatch){
-        var json = await axios.get(`/diets`);
+        var json = await axios.get("/diets");
         return dispatch( {
             type : GET_TYPE_DIETS,
             payload: json.data
@@ -78,7 +78,7 @@ export function getTypeDiets (){
 
 export function postRecipes (payload){
     return async function(dispatch){
-        var json = await axios.post(`/recipe`,payload);
+        var json = await axios.post("/recipe",payload);
         return json
     }
 }
