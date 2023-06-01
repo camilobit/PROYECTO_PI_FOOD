@@ -9,6 +9,7 @@ import axios from 'axios';
 // import Loader2 from './components/Loaders/Loader2'
 
 axios.defaults.baseURL= "https://proyectopifood-production.up.railway.app/"
+//aqui e definido una nueva base para la url de solicitudes mi back ya quedó levantado y esa es la ruta definida para llamarlo
 
 
 
