@@ -8,7 +8,7 @@ import About from './components/About/About';
 import axios from 'axios';
 // import Loader2 from './components/Loaders/Loader2'
 
-axios.defaults.baseURL= "http://localhost:3001/"
+axios.defaults.baseURL= "https://proyectopifood-production.up.railway.app/"
 
 
 
