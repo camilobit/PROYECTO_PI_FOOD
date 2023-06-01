@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export const getRecipes = () => {
     return async function(dispacth){
-        var json = await axios.get("/recipes", {
+        var json = await axios.get("https://proyectopifood-production.up.railway.app/recipes", {
         });
         return dispacth({
             type: GET_RECIPES,
