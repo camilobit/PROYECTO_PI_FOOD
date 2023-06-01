@@ -2,12 +2,11 @@ import { GET_RECIPES, FILTER_BY_TYPEDIET, FILTER_CREATED,
 ORDER_BY_NAME, ORDER_BY_PUNTUATION, GET_BY_NAME, GET_BY_ID, GET_TYPE_DIETS, DELETE_RECIPE, NEW_API } from './action-types'
 import axios from 'axios';
 
-const API_KEY ='84b449dbfc2e4a2ba25a8d6d6c842cd1'
 
 
 export const getRecipes = () => {
     return async function(dispacth){
-        var json = await axios.get("/recipes", {
+        var json = await axios.get(`/recipes`, {
         });
         return dispacth({
             type: GET_RECIPES,
@@ -15,18 +14,6 @@ export const getRecipes = () => {
         }) 
     }
 }
-
-export function recipesApiNew (){
-    return async function(dispacth){
-        var json = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=10&addRecipeInformation=true`, {
-        });
-        return dispacth({
-            type: NEW_API,
-            payload: json.data
-        }) 
-    }
-}
-
 
 export function filterRecipesByTypeDiet (payload){
     return {
@@ -80,7 +67,7 @@ export function getRecipesById (id){
 
 export function getTypeDiets (){
     return async function(dispatch){
-        var json = await axios.get("/diets");
+        var json = await axios.get(`/diets`);
         return dispatch( {
             type : GET_TYPE_DIETS,
             payload: json.data
@@ -91,7 +78,7 @@ export function getTypeDiets (){
 
 export function postRecipes (payload){
     return async function(dispatch){
-        var json = await axios.post("/recipe",payload);
+        var json = await axios.post(`/recipe`,payload);
         return json
     }
 }
